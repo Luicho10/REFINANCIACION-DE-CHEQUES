@@ -2,6 +2,7 @@ import React,{useMemo,useState}from"react";
 import{calcularOperacion,crearChequeVacio,calcularCheque}from"./motores/MotorDescuentoCheques";
 const moneda=(v,m="Gs.")=>{const n=Number(v)||0;return m==="USD"?`USD ${new Intl.NumberFormat("es-PY",{minimumFractionDigits:2,maximumFractionDigits:2}).format(n)}`:`Gs. ${new Intl.NumberFormat("es-PY",{maximumFractionDigits:0}).format(n)}`};
 const numero=(v,d=2)=>new Intl.NumberFormat("es-PY",{minimumFractionDigits:d,maximumFractionDigits:d}).format(Number(v)||0);
+const entero=v=>new Intl.NumberFormat("es-PY",{maximumFractionDigits:0}).format(Number(v)||0);
 const parseMonto=v=>{let s=String(v??"").trim().replace(/\s/g,"");if(!s)return 0;if(s.includes(","))s=s.replace(/\./g,"").replace(",",".");else s=s.replace(/[^0-9.-]/g,"");const n=Number(s);return Number.isFinite(n)?n:0};
 const entradaMonto=(v,m)=>{const n=Number(v)||0;return m==="USD"?new Intl.NumberFormat("es-PY",{minimumFractionDigits:2,maximumFractionDigits:2}).format(n):new Intl.NumberFormat("es-PY",{maximumFractionDigits:0}).format(n)};
 const hoy=()=>new Date().toISOString().slice(0,10);
