@@ -5,22 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#1F6F43">
   <meta name="description" content="Simulador independiente de descuento de cheques y liquidación financiera.">
-  <title>Simulador de Descuento de Cheques</title>
-  <script>
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.getRegistrations().then(function(regs){
-        regs.forEach(function(reg){ reg.unregister(); });
-      });
-    }
-    if ("caches" in window) {
-      caches.keys().then(function(keys){
-        keys.forEach(function(key){ caches.delete(key); });
-      });
-    }
-  </script>
+  <link rel="manifest" href="/REFINANCIACION-DE-CHEQUES/manifest.json">
+  <link rel="icon" href="/REFINANCIACION-DE-CHEQUES/icon.svg" type="image/svg+xml">
+  <title>Simulador Financiero</title>
 </head>
 <body>
   <div id="root"></div>
   <script type="module" src="./src/main.jsx"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/REFINANCIACION-DE-CHEQUES/sw.js');
+      });
+    }
+  </script>
 </body>
 </html>
