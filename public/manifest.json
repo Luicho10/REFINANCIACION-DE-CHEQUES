@@ -1,1 +1,20 @@
-{"name":"Simulador de Descuento de Cheques","short_name":"Descuento Cheques","description":"Simulador independiente de descuento de cheques y liquidación.","start_url":"/REFINANCIACION-DE-CHEQUES/","display":"standalone","background_color":"#f4f6f8","theme_color":"#1F6F43","lang":"es"}
+{
+  "name": "Simulador Financiero - Descuento de Cheques",
+  "short_name": "Simulador Financiero",
+  "description": "Simulador independiente de descuento de cheques y liquidación financiera.",
+  "start_url": "/REFINANCIACION-DE-CHEQUES/",
+  "scope": "/REFINANCIACION-DE-CHEQUES/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f4f6f8",
+  "theme_color": "#1F6F43",
+  "lang": "es-PY",
+  "icons": [
+    {
+      "src": "/REFINANCIACION-DE-CHEQUES/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
